@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/IdeaProjects.iml" filepath="$PROJECT_DIR$/.idea/IdeaProjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThymeleafLogin/ThymeleafLogin.iml" filepath="$PROJECT_DIR$/ThymeleafLogin/ThymeleafLogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Transactional/Transactional.iml" filepath="$PROJECT_DIR$/Transactional/Transactional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demotwo/demotwo.iml" filepath="$PROJECT_DIR$/demotwo/demotwo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/roleslogin/roleslogin.iml" filepath="$PROJECT_DIR$/roleslogin/roleslogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/crudspring/springboot_backend.iml" filepath="$PROJECT_DIR$/crudspring/springboot_backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transactionalexample/transactionalexample.iml" filepath="$PROJECT_DIR$/transactionalexample/transactionalexample.iml" />
+    </modules>
+  </component>
+</project>
