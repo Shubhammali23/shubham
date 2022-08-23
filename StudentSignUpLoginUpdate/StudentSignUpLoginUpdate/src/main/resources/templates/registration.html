@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+
+<link rel="stylesheet" href=
+        "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<link rel="stylesheet" href=
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity=
+              "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+                Login Module</a>
+        </div>
+    </div>
+</nav>
+<br/>
+<br/>
+<br/>
+
+<!-- create form-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <!--Success Message-->
+            <div th:if="${param.success}">
+                <div class="alert alert-success">
+                    New User Registration Successfully ....!!!!!!
+                </div>
+            </div>
+
+            <h1>Registration</h1>
+
+            <form th:action="@{/registration}" th:object="${user}" method="post">
+
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" th:field="*{firstName}" id="firstName"
+                           placeholder="FIRST NAME">
+                </div>
+
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" th:field="*{lastName}" id="lastName"
+                           placeholder="LAST NAME">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control"
+                           th:field="*{email}" id="email" placeholder="EMAIL">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" th:field="*{password}" id="password"
+                           placeholder="PASSWORD" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,}$"
+                           title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                            required>
+
+                <i class="bi bi-eye-slash"
+                   id="togglePassword" ></i>
+
+        </div>
+
+        <!--                try-->
+
+        <script>
+            const togglePassword = document
+                .querySelector('#togglePassword');
+
+            const password = document.querySelector('#password');
+
+            togglePassword.addEventListener('click', () => {
+
+                // Toggle the type attribute using
+                // getAttribure() method
+                const type = password
+                    .getAttribute('type') === 'password' ?
+                    'text' : 'password';
+
+                password.setAttribute('type', type);
+
+                // Toggle the eye and bi-eye icon
+                this.classList.toggle('bi-eye');
+            });
+        </script>
+        <!--                error-->
+                <br/>
+                <br/>
+
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Register</button>
+
+                    <span>Already Register?
+                                   <a href="/" th:href="@{/login}">Login Here</a>
+                               </span>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

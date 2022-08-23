@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Employee</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<div class="container">
+    <h1>Employee Management System</h1>
+<!--    <form action="#" th:action="@{/registration/adminUpdate}" th:object="${user} " method="POST">-->
+    <form action="#" th:action="@{'/saveUser/' + ${user.id}}" th:object="${user} "method="POST">
+
+
+        <!--      //handle to update by id-->
+        <!--        <input type="hidden" th:field="*{id}"/>-->
+
+
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" th:field="*{firstName}" id="firstName"
+                   placeholder="ENTER FIRST NAME">
+        </div>
+
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" th:field="*{lastName}" id="lastName" placeholder="ENTER LAST NAME">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control"
+                   th:field="*{email}" id="email" placeholder="EMAIL">
+        </div>
+
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="text" class="form-control" th:field="*{password}" id="password" placeholder="PASSWORD"
+                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                   required>
+        </div>
+
+        <!--        <input type="text" th:field="*{firstName}"-->
+        <!--               class="form-control-plaintext"/><br/>-->
+
+        <!--        <input type="text" th:field="*{lastName}"-->
+        <!--               class="form-control-plaintext"/><br/>-->
+
+        <!--        <input type="text" th:field="*{email}"-->
+        <!--               class="form-control-plaintext"/><br/>-->
+
+        <!--        <input type="text" th:field="*{password}"-->
+        <!--               class="form-control-plaintext"/></br>-->
+
+        <button type="submit" class="btn btn-success">Update Employee</button>
+    </form>
+</body>
+</html>
